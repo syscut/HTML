@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>檢查ID</title>
+	<script>
+	  function checkID()
+	  {
+	    var id = document.myform.id.value;
+	    var re = /^[A-Z]{1}(1|2)\d{8}$/; //javascript沒有\\d跳脫字元的問題 打\d即可
+	    
+	    if(re.test(id.toUpperCase())){
+	    	document.myform.submit();
+			  
+	    }else{
+	    	alert("格式錯誤!!");
+	    	document.myform.id.focus();
+	    	document.myform.id.select();
+			return false;
+	    } 	
+	  }
+	</script>
+  </head>
+  
+  <body text="blue">
+	<form method="post" name="myform" action="http://localhost:8080/Jelly/doCheckID">
+	  身分證字號：<input type="text"autofocus name="id" size="20">
+	  <p>
+	  <input type="button" value="傳送" onclick="checkID();">
+	  <input type="reset" value="重填">
+	</form>
+  </body>
+</html>
+	     
