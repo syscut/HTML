@@ -1,0 +1,26 @@
+﻿
+<html>
+  <head>
+    <meta charset="utf-8">
+	<!-- 加入5秒後自動轉向check_ID.html -->
+	<meta http-equiv="refresh" content="3; url=check_ID.html">
+	<title>錯誤訊息</title>	
+  </head>
+<script>
+var s = 3;
+function reciprocal(){
+    document.getElementById("showtime").innerHTML=s;
+    setTimeout(reciprocal,1000);
+    s -= 1;
+}
+</script>
+  <body text=red onload="reciprocal()">
+
+	<center>
+       <h1>身分證字號錯誤 !!</h1>
+       <span id="showtime"></span> 秒後返回輸入頁面…
+	</center>
+  </body>   
+</html>   
+   
+   
